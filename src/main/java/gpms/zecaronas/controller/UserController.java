@@ -27,12 +27,12 @@ public class UserController {
     @GetMapping("/criar")
     public String create(Model model, @RequestParam String name) {
         var user = new User();
-        user.name = name;
-        user.email = name + "@email.com";
+        user.setNome(name);
+        user.setEmail(name + "@email.com");
 
         userRepo.save(user);
         
-        model.addAttribute("username", user.name);
+        model.addAttribute("username", user.getNome());
 
         return "created";
     }
