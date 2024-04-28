@@ -1,0 +1,15 @@
+<h1>Cadastro de Usuário</h1>
+
+{{#erro}}
+    <p style="color:red;">Erro: {{erro}}<p>
+{{/erro}}
+
+<form action="/users/register" method="post">
+    <input minlength="3" type="text" name="nome" placeholder="Nome">
+    <input style="display: block;" type="email" name="email" placeholder="Email">
+    <div>
+        <input minlength="3" type="password" name="senha" placeholder="Senha">
+        <input minlength="3" type="password" name="confirmacao_senha" placeholder="Confirmação de Senha">
+    </div>
+    <input type="submit" value="Continuar">
+</form>
