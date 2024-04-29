@@ -13,9 +13,6 @@ public class Carona {
     private Long id_carona;                        //chave primaria
 
     @Getter @Setter
-    private Long id_passageiro;                     //chave estrangeira
-
-    @Getter @Setter
     private Long id_motorista;                      //chave estrangeira
 
     @Getter @Setter
