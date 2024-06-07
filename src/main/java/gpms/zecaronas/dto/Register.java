@@ -9,4 +9,5 @@ public class Register {
     public String email;
     public String senha;
     public String confirmacao_senha;
+    public String cnh;
 }

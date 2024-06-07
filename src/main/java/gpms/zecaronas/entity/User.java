@@ -7,6 +7,8 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.util.Strings;
+
 @Entity @Table(name = "Usuarios")
 public class User {
 
@@ -29,7 +31,7 @@ public class User {
     private String tipo;        //não sei se isso será o definitivo, mas só pra ter algo
                                 //que separe usuario passageiro e usuario motorista
     @Getter @Setter
-    private Long CNH;           //não tenho CNH entao nao sei mto bem mexer nisso lul
+    private String CNH;           //não tenho CNH entao nao sei mto bem mexer nisso lul
                                 //mas acho que são 12 numeros né?
 
     @Getter @Setter
@@ -38,6 +40,7 @@ public class User {
                                 @OneToMany(mappedBy = "user")
     private List<User_Veiculo> userVeiculos = new ArrayList<>();
 
-    //private List <Avaliacao> avaliacoes;
-
+    public boolean isMotorista() {
+        return Strings.isNotBlank(this.CNH);
+    }
 }

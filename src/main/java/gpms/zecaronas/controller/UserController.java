@@ -48,15 +48,10 @@ public class UserController {
         user.setNome(dto.nome);
         user.setEmail(dto.email);
         user.setSenha(passEncoder.encode(dto.senha));
+        user.setCNH(dto.cnh);
 
         userRepo.save(user);
 
         return "redirect:/login";
-    }
-
-    @GetMapping
-    public String test(Model model) {
-        model.addAttribute("pizza", "deliawdawdcious");
-        return "yay";
     }
 }
