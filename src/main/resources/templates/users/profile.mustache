@@ -1,0 +1,49 @@
+{{#layout}}
+
+<h1> Meu Perfil</h1>
+
+{{#user}}
+    <ul>
+        <li>Nome: {{getNome}}</li>
+        <li>CPF: {{getCpf}}</li>
+        <li>Telefone: {{getTelefone}}</li>
+        <li>Email: {{getEmail}}</li>
+        {{#isDriver}}
+            <li>CNH: {{getCNH}}<li>
+        {{/isDriver}}
+    </ul>
+
+    {{#isDriver}}
+        <h2>Meus Veículos</h2>
+        <ul>
+            {{#getVehicles}}
+                <li>{{getVeiculo.getPlaca}}</li>
+            {{/getVehicles}}
+        </ul>
+
+        {{^getVehicles}}
+        Não há veículos no momento.
+        {{/getVehicles}}
+
+        <h3>Adicionar veículo</h3>
+        <form action="/vehicles" method="POST" class="form-veiculos">
+            <input type="string" required name="placa" placeholder="placa" />
+            <input type="string" required name="modelo" placeholder="modelo" />
+            <input type="number" required name="capacidade" placeholder="capacidade" />
+            <input type="string" required name="cor" placeholder="cor" />
+            <input type="submit" value="Continuar" />
+        </form>
+    {{/isDriver}}
+{{/user}}
+
+<style>
+
+.form-veiculos {
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+}
+
+</style>
+
+{{/layout}}

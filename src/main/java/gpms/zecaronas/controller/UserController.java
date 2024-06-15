@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import gpms.zecaronas.CurrentUser;
 import gpms.zecaronas.dto.Register;
 import gpms.zecaronas.entity.User;
 import gpms.zecaronas.repository.UserRepository;
@@ -24,9 +25,18 @@ public class UserController {
     @Autowired
     private PasswordEncoder passEncoder;
 
+    @Autowired
+    private CurrentUser currentUser;
+
     @GetMapping("register")
     public String registerForm() {
         return "users/register";
+    }
+
+    @GetMapping("profile")
+    public String profile(Model model) {
+        model.addAttribute("user", currentUser.get());
+        return "users/profile";
     }
 
     @PostMapping("register")

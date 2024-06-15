@@ -1,47 +1,5 @@
-<style>
-.navbar {
-    display: flex;
-    justify-content: end;
-    border: 1px solid black;
-}
-</style>
-
-<div class="navbar">
-    <a href="/logout" method="POST">sair</a>
-</div>
+{{#layout}}
 
 <h1>nice home!</h1>
 
-{{#user.isDriver}}
-    <h2>Meus Veículos</h2>
-    <ul>
-        {{#user.getVehicles}}
-            <li>{{getVeiculo.getPlaca}}</li>
-        {{/user.getVehicles}}
-    </ul>
-
-    {{^user.getVehicles}}
-    Não há veículos no momento.
-    {{/user.getVehicles}}
-
-    <h3>Adicionar veículo</h3>
-    <form action="/vehicles" method="POST" class="form-veiculos">
-        <input type="string" required name="placa" placeholder="placa" />
-        <input type="string" required name="modelo" placeholder="modelo" />
-        <input type="number" required name="capacidade" placeholder="capacidade" />
-        <input type="string" required name="cor" placeholder="cor" />
-        <input type="submit" value="Continuar" />
-    </form>
-{{/user.isDriver}}
-
-
-
-<style>
-
-.form-veiculos {
-    display: flex;
-    flex-direction: column;
-    width: 10rem;
-}
-
-</style>
+{{/layout}}

@@ -1,0 +1,28 @@
+<style>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    margin: auto;
+    width: 460px;
+    }
+
+</style>
+
+<html>
+    <head>
+        <title>Ze Caronas</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/users/profile">perfil</a>
+            <a href="/logout" class="logout" method="POST">sair</a>
+        </nav>
+        <main>
+            {{{layout.body}}}
+        </main>
+    </body>
+</html>
