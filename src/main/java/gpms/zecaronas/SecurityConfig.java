@@ -21,7 +21,7 @@ public class SecurityConfig {
                         .requestMatchers("/users/register").permitAll()
                         // fora isso, todos os endpoints são autenticados
                         .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults()).csrf().disable();
+                .formLogin(login -> login.defaultSuccessUrl("/", true)).csrf().disable();
 
         return http.build();
     }

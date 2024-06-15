@@ -7,28 +7,28 @@ import lombok.Setter;
 import java.util.Date;
 
 @Entity @Table(name = "Caronas")
-public class Carona {
+public class Ride {
 
     @Getter @Setter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_carona;                        //chave primaria
+    private Long id;                        //chave primaria
 
     @Getter @Setter
-    private Long id_passageiro;                     //chave estrangeira
+    private Long idPassageiro;                     //chave estrangeira
 
     @Getter @Setter
-    private Long id_motorista;                      //chave estrangeira
+    private Long idMotorista;                      //chave estrangeira
 
     @Getter @Setter
     private String trajeto;
 
     @Getter @Setter
-    private Date inicio_carona;
+    private Date inicioCarona;
 
     @Getter @Setter
-    private Date fim_carona;
+    private Date fimCarona;
 
     @Getter @Setter
-    private int quantidade_passageiros;     // conta o motorista?
+    private int quantidadePassageiros;     // conta o motorista?
 
     @Getter @Setter
     private String status;                  //agendada; em andamento; finalizada; cancelada

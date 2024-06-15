@@ -5,19 +5,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity @Table(name = "Avaliacao")
-public class Avaliacao {
+public class Evaluation {
 
     @Getter @Setter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_avaliacao;                //chave primaria
+    private Long id;                //chave primaria
 
     @Getter @Setter
-    private Long id_carona;         //chave estrangeira
+    private Long idCarona;         //chave estrangeira
 
     @Getter @Setter
-    private Long id_passageiro;     //chave estrangeira
+    private Long idPassageiro;     //chave estrangeira
 
     @Getter @Setter
-    private Long id_motorista;      //chave estrangeira
+    private Long idMotorista;      //chave estrangeira
 
     @Getter @Setter
     private String comentario;

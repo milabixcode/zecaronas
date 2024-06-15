@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity @Table(name = "Veiculos")
-public class Veiculo {
+public class Vehicle {
 
     @Setter @Getter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_veiculo;                //chave primaria
+    private Long id;                //chave primaria
 
     @Setter @Getter
     private String placa;
@@ -26,5 +26,5 @@ public class Veiculo {
     private String cor;
 
     @OneToMany(mappedBy = "veiculo")
-    private List<User_Veiculo> userVeiculos = new ArrayList<>();
+    private List<UserVehicle> userVeiculos = new ArrayList<>();
 }

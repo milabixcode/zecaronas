@@ -8,7 +8,7 @@ import lombok.Setter;
 //RELAÇÃO MUITOS PRA MUITOS [User - Veiculo]
 
 @Entity @Table(name = "Users_veiculos")
-public class User_Veiculo {
+public class UserVehicle {
 
     @Getter @Setter
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,6 @@ public class User_Veiculo {
 
     @Getter @Setter
     @ManyToOne @JoinColumn(name = "id_veiculo")
-    private Veiculo veiculo;        //chave estrangeira [Veiculo id]
+    private Vehicle veiculo;        //chave estrangeira [Veiculo id]
 
 }

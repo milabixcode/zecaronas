@@ -13,7 +13,7 @@ import org.apache.logging.log4j.util.Strings;
 public class User {
 
     @Getter @Setter @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_user;            //chave primaria
+    private Long id;            //chave primaria
 
     @Getter @Setter
     private int cpf;            //chave candidata (pensando em usar o CPF ja como o login)
@@ -37,10 +37,11 @@ public class User {
     @Getter @Setter
     private String email;
 
+    @Getter
                                 @OneToMany(mappedBy = "user")
-    private List<User_Veiculo> userVeiculos = new ArrayList<>();
+    private List<UserVehicle> vehicles = new ArrayList<>();
 
-    public boolean isMotorista() {
+    public boolean isDriver() {
         return Strings.isNotBlank(this.CNH);
     }
 }
