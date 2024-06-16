@@ -1,5 +1,57 @@
 {{#layout}}
 
-<h1>nice home!</h1>
+{{#msg}}
+    <p>{{.}}</p>
+{{/msg}}
+
+<h1>Caronas</h1>
+
+<h2> Últimas Caronas</h2>
+
+<ul>
+{{#rides}}
+    <li>
+        <p>{{ride.getInicioCarona}} / {{ride.getFimCarona}}</p>
+        <p>{{ride.getOrigem}} -> {{ride.getDestino}}</p>
+        <p>Passageiros: {{ride.getQuantidadePassageiros}}</p>
+        <p>Status: {{ride.getStatus}}</p>
+        {{#policy.canApply}}
+            <form action="rides/apply" method="post">
+                <input type="hidden" name="rideId" value="{{ride.getId}}">
+                <input type="submit" value="Pedir carona">
+            </form>
+        {{/policy.canApply}}
+
+        {{#roleInTheRide}}
+            <p>Você está participando dessa carona como {{.}} =)</p>
+        {{/roleInTheRide}}
+    </li>
+{{/rides}}
+</ul>
+
+{{^rides}}
+    <p>Não há caronas disponíveis :(<p>
+{{/rides}}
+
+<h2>Minhas Caronas</h2>
+
+<ul>
+    {{#myRides}}
+        <li>
+            <p>{{ride.getInicioCarona}} / {{ride.getFimCarona}}</p>
+            <p>{{ride.getOrigem}} -> {{ride.getDestino}}</p>
+            <p>Passageiros: {{ride.getQuantidadePassageiros}}</p>
+            <p>Status: {{ride.getStatus}}</p>
+
+            {{#roleInTheRide}}
+                <p>Você está participando dessa carona como {{.}} =)</p>
+            {{/roleInTheRide}}
+        </li>
+    {{/myRides}}
+</ul>
+
+{{#user.isDriver}}
+    <a href="/rides/create">Criar carona</a>
+{{/user.isDriver}}
 
 {{/layout}}

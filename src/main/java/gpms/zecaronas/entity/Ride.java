@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity @Table(name = "Caronas")
 public class Ride {
@@ -19,13 +21,16 @@ public class Ride {
     private Long idMotorista;                      //chave estrangeira
 
     @Getter @Setter
-    private String trajeto;
+    private String origem;
 
     @Getter @Setter
-    private Date inicioCarona;
+    private String destino;
 
     @Getter @Setter
-    private Date fimCarona;
+    private LocalDate inicioCarona;
+
+    @Getter @Setter
+    private LocalDate fimCarona;
 
     @Getter @Setter
     private int quantidadePassageiros;     // conta o motorista?
@@ -33,4 +38,7 @@ public class Ride {
     @Getter @Setter
     private String status;                  //agendada; em andamento; finalizada; cancelada
 
+    @Getter
+    @OneToMany(mappedBy = "ride")
+    private List<UserRide> users = new ArrayList<>();
 }
