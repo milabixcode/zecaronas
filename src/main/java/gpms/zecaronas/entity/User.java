@@ -16,7 +16,7 @@ public class User {
     private Long id;            //chave primaria
 
     @Getter @Setter
-    private int cpf;            //chave candidata (pensando em usar o CPF ja como o login)
+    private String cpf;            //chave candidata (pensando em usar o CPF ja como o login)
 
     @Setter @Getter
     private String nome;
@@ -25,7 +25,7 @@ public class User {
     private String senha;       //ainda preciso ver autenticação e tals
 
     @Getter @Setter
-    private int telefone;       //apenas um numero de telefone por usuário
+    private String telefone;       //apenas um numero de telefone por usuário
 
     @Getter @Setter
     private String tipo;        //não sei se isso será o definitivo, mas só pra ter algo
