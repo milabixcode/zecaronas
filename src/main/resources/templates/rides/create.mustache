@@ -1,0 +1,29 @@
+{{#layout}}
+
+{{#ride}}
+    <form action="/rides/create" method="post">
+        <label>
+            <p style="margin-bottom: 0;">Origem</p>
+            <input type="text" required name="origem">
+        </label>
+        <label>
+            <p style="margin-bottom: 0;">Destino</p>
+            <input type="text" required name="destino">
+        </label>
+        <label>
+            <p style="margin-bottom: 0;">Início</p>
+            <input type="date" required name="inicioCarona">
+        </label>
+        <label>
+            <p style="margin-bottom: 0;">Fim</p>
+            <input type="date" required name="fimCarona">
+        </label>
+        <label>
+            <p style="margin-bottom: 0;">Passageiros</p>
+            <input type="number" min="0" required name="quantidadePassageiros">
+        </label>
+        <br><br>
+        <input type="submit" value="Criar">
+    </form>
+{{/ride}}
+{{/layout}}
