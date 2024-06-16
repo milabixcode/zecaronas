@@ -13,9 +13,6 @@ public class RidePolicy {
     }
 
     public boolean canApply() {
-        var isPassenger = ride.getUsers().stream().anyMatch(userRide -> userRide.getUser().getId().equals(user.getId()));
-        var notTheDriver = !user.getId().equals(ride.getIdMotorista());
-
-        return notTheDriver && !isPassenger;
+        return ride.relationWith(user).equals("");
     }
 }

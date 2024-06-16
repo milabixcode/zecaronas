@@ -39,6 +39,18 @@ public class Ride {
     private String status;                  //agendada; em andamento; finalizada; cancelada
 
     @Getter
-    @OneToMany(mappedBy = "ride")
+    @OneToMany(mappedBy = "ride", cascade = CascadeType.REMOVE)
     private List<UserRide> users = new ArrayList<>();
+
+    public String relationWith(User user) {
+        if (getIdMotorista().equals(user.getId())) {
+            return "driver";
+        }
+
+        if (getUsers().stream().anyMatch(userRide -> userRide.getUser().getId().equals(user.getId()))) {
+            return "passenger";
+        }
+
+        return "";
+    }
 }

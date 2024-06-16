@@ -19,14 +19,13 @@ public class RideUI {
     }
 
     public String roleInTheRide() {
-        if (ride.getIdMotorista().equals(currentUser.getId())) {
-            return "motorista";
+        switch (ride.relationWith(currentUser)) {
+            case "driver":
+                return "motorista";
+            case "passenger":
+                return "passageiro";
+            default:
+                return null;
         }
-
-        if (ride.getUsers().stream().anyMatch(userRide -> userRide.getUser().getId().equals(currentUser.getId()))) {
-            return "passageiro";
-        }
-
-        return null;
     }
 }

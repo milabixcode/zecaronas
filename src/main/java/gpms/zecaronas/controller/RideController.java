@@ -18,6 +18,7 @@ import gpms.zecaronas.entity.UserRide;
 import gpms.zecaronas.policy.RidePolicy;
 import gpms.zecaronas.repository.RideRepository;
 import gpms.zecaronas.repository.UserRideRepository;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller()
 @RequestMapping("rides")
@@ -67,14 +68,35 @@ public class RideController {
             redirectAttributes.addFlashAttribute("msg", "Você não pode aplicar a essa corrida :(");
             return "redirect:/";
         }
-        
+
         var userRide = new UserRide();
         userRide.setRide(ride);
         userRide.setUser(currentUser.get());
 
         userRideRepo.save(userRide);
 
-        redirectAttributes.addFlashAttribute("msg", "Aplicação feita com sucesso!");
+        redirectAttributes.addFlashAttribute("msg", "Pedido feito com sucesso!");
+        return "redirect:/";
+    }
+
+    @PostMapping("cancel")
+    public String cancel(Model model, HttpServletRequest request, RedirectAttributes redirectAttributes) {
+        var rideId = Long.parseLong(request.getParameter("rideId"));
+        var ride = rideRepo.findById(rideId).get();
+
+        switch (ride.relationWith(currentUser.get())) {
+            case "driver":
+                rideRepo.delete(ride);
+                break;
+            case "passenger":
+                var userRide = userRideRepo.findByUserAndRide(currentUser.get(), ride).get();
+                userRideRepo.delete(userRide);
+                break;
+            default:
+                return "";
+        }
+
+        redirectAttributes.addFlashAttribute("msg", "carona cancelada com sucesso!");
         return "redirect:/";
     }
 }

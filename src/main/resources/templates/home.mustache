@@ -45,6 +45,10 @@
 
             {{#roleInTheRide}}
                 <p>Você está participando dessa carona como {{.}} =)</p>
+                <form action="rides/cancel" method="post">
+                    <input type="hidden" name="rideId" value="{{ride.getId}}">
+                    <input type="submit" value="Cancelar carona">
+                </form>
             {{/roleInTheRide}}
         </li>
     {{/myRides}}
