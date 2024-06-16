@@ -63,7 +63,7 @@ Para rodar o projeto localmente:
 ```git clone <URL_do_repositorio>```
 ```cd <nome_do_projeto>```
 
-2. Configurar a conexão com o Banco de Dados no arquivo application.properties, que está na pasta 
+2. Configurar a conexão com o Banco de Dados no arquivo src/main/resources/application.properties
 
 3. No terminal, navegue até a pasta raiz do projeto e execute o comando para subir a aplicação localmente:
 ```./mvnw spring-boot:run```
