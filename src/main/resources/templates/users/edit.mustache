@@ -1,0 +1,39 @@
+{{#layout}}
+<h1>Atualizar Cadastro</h1>
+
+{{#msg}}
+    <p>{{msg}}</p>
+{{/msg}}
+
+{{#erro}}
+    <p style="color:red;">Erro: {{erro}}<p>
+{{/erro}}
+
+{{#user}}
+    <form action="/users/edit" method="post">
+        <label>
+            <p style="margin-bottom: 0px">Nome</p>
+            <input minlength="3" type="text" name="nome" value="{{getNome}}" placeholder="Nome">
+        </label>
+        <label>
+            <p style="margin-bottom: 0px">Email</p>
+            <input required style="display: block;" type="email" name="email" value="{{getEmail}}" placeholder="Email">
+        </label>
+        <label>
+            <p style="margin-bottom: 0px">CNH (se for motorista)</p>
+            <input minlength="3" type="text" name="cnh" value="{{getCNH}}" placeholder="CNH (se for motorista)">
+        </label>
+        <label>
+            <p style="margin-bottom: 0px">CPF</p>
+            <input minlength="3" type="text" name="cpf" value="{{getCpf}}" placeholder="CPF">
+        </label>
+        <label>
+            <p style="margin-bottom: 0px">Telefone</p>
+            <input minlength="3" type="text" name="telefone" value="{{getTelefone}}" placeholder="Telefone">
+        </label>
+        <br><br>
+        <input type="submit" value="Continuar">
+    </form>
+{{/user}}
+
+{{/layout}}

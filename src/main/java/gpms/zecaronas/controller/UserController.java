@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import gpms.zecaronas.CurrentUser;
 import gpms.zecaronas.dto.Register;
+import gpms.zecaronas.dto.UserUpdate;
 import gpms.zecaronas.entity.User;
 import gpms.zecaronas.repository.UserRepository;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
@@ -39,8 +39,33 @@ public class UserController {
         return "users/profile";
     }
 
+    @GetMapping("edit")
+    public String edit(Model model) {
+        model.addAttribute("user", currentUser.get());
+        return "users/edit";
+    }
+
+    @PostMapping("edit")
+    public String editPut(Model model, UserUpdate dto) {
+        var user = currentUser.get();
+
+        user.setCNH(dto.getCnh());
+        user.setCpf(dto.getCpf());
+        user.setEmail(dto.getEmail());
+        user.setTelefone(dto.getTelefone());
+        user.setNome(dto.getNome());
+
+        user = userRepo.save(user);
+
+
+        model.addAttribute("user", user);
+        model.addAttribute("msg", "Dados salvos com sucesso!");
+
+        return "users/edit";
+    }
+
     @PostMapping("register")
-    public String register(HttpServletRequest request, Model model, Register dto) throws ServletException {
+    public String register(HttpServletRequest request, Model model, Register dto) {
         model.addAttribute("nome", dto.nome);
         model.addAttribute("email", dto.email);
 

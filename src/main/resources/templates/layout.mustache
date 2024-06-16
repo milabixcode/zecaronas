@@ -1,13 +1,23 @@
 <style>
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    background: black;
 }
 
-body {
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-items > a {
+    color: white;
+}
+
+main {
     margin: auto;
     width: 460px;
-    }
+}
 
 </style>
 
@@ -15,11 +25,14 @@ body {
     <head>
         <title>Ze Caronas</title>
     </head>
-    <body>
+    <body style="margin: 0px;">
         <nav class="navbar">
-            <a href="/">Home</a>
-            <a href="/users/profile">perfil</a>
-            <a href="/logout" class="logout" method="POST">sair</a>
+            <ul class="nav-items" style="width: 460px; margin: auto;">
+                <img src="/logo.png" style="width: 50px; height: auto;" alt="logo do zecaronas">
+                <a href="/">Home</a>
+                <a href="/users/profile">perfil</a>
+                <a href="/logout" class="logout" method="POST">sair</a>
+            </div>
         </nav>
         <main>
             {{{layout.body}}}

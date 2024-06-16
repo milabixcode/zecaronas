@@ -9,9 +9,11 @@
         <li>Telefone: {{getTelefone}}</li>
         <li>Email: {{getEmail}}</li>
         {{#isDriver}}
-            <li>CNH: {{getCNH}}<li>
+            <li>CNH: {{getCNH}}</li>
         {{/isDriver}}
     </ul>
+
+    <a href="/users/edit">Editar Perfil</a>
 
     {{#isDriver}}
         <h2>Meus Veículos</h2>
