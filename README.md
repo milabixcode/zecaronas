@@ -15,6 +15,7 @@
 |     Desenvolvedor       |    GitHub     |   LinkedIn   |
 |-------------------------|---------------|--------------|
 |👤 Camila Vieira Ferrari Correia|https://github.com/milabixcode|https://www.linkedin.com/in/camila-ferrari/|
+|👤 Thales Fonseca Soares|https://github.com/ThalesFS|https://https://www.linkedin.com/in/thales-soares-712201253/|
 
 
 <br>
