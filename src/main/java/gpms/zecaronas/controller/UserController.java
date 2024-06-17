@@ -84,6 +84,8 @@ public class UserController {
         user.setEmail(dto.email);
         user.setSenha(passEncoder.encode(dto.senha));
         user.setCNH(dto.cnh);
+        user.setCpf(dto.cpf);
+        user.setTelefone(dto.telefone);
 
         userRepo.save(user);
 

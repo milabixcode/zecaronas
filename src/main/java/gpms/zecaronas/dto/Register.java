@@ -10,4 +10,6 @@ public class Register {
     public String senha;
     public String confirmacao_senha;
     public String cnh;
+    public String cpf;
+    public String telefone;
 }

@@ -7,7 +7,7 @@ import lombok.Setter;
 //ENTIDADE CRIADA PARA TABELA ASSOCIAÇÃO
 //RELAÇÃO MUITOS PRA MUITOS [User - Veiculo]
 
-@Entity @Table(name = "Users_veiculos")
+@Entity @Table(name = "users_veiculos")
 public class UserVehicle {
 
     @Getter @Setter
@@ -15,11 +15,11 @@ public class UserVehicle {
     private Long id;                //chave primaria
 
     @Getter @Setter
-    @ManyToOne @JoinColumn(name = "id_user")
+    @ManyToOne @JoinColumn(name = "userId")
     private User user;           //chave estrangeira [User id]
 
     @Getter @Setter
-    @ManyToOne @JoinColumn(name = "id_veiculo")
+    @ManyToOne @JoinColumn(name = "vehicleId")
     private Vehicle veiculo;        //chave estrangeira [Veiculo id]
 
 }
