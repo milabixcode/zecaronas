@@ -16,7 +16,7 @@
 |-------------------------|---------------|--------------|
 |👤 Camila Vieira Ferrari Correia|https://github.com/milabixcode|https://www.linkedin.com/in/camila-ferrari/|
 |👤 Thales Fonseca Soares|https://github.com/ThalesFS|https://https://www.linkedin.com/in/thales-soares-712201253/|
-
+|👤 Breno Silva Braido|https://github.com/BrenoSB98|https://www.linkedin.com/in/bbraido2/|
 
 <br>
 
