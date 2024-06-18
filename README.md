@@ -25,9 +25,11 @@
 Este projeto consiste em um sistema web para facilitar o compartilhamento de caronas entre membros da comunidade da Universidade Federal Fluminense. O objetivo é reduzir custos, promover a sustentabilidade e melhorar a mobilidade dentro da universidade, conectando pessoas que têm destinos semelhantes.
 
 ``Funcionalidades:``
-1. Cadastro de Usuários: Permitir que usuários da UFF se cadastrem no sistema, utilizando seu e-mail institucional.
-2. Oferta de Caronas: Usuários podem oferecer caronas indicando o ponto de partida, destino, horário disponível e número de assentos.
-3. Busca de Caronas: Usuários podem buscar caronas disponíveis informando o ponto de partida e destino desejados.
+1. Cadastro de Usuários: Permitir que usuários passageiros e motoristas da UFF se cadastrem no sistema, utilizando seu e-mail institucional. No caso de motorista, o sistema permite que ele cadastre as informações de seus veículos.
+2. Oferta de Caronas: Usuários motoristas podem oferecer caronas indicando o ponto de partida, destino, horário disponível e número de assentos.
+3. Busca de Caronas: Usuários passageiros podem buscar caronas disponíveis informando o ponto de partida e destino desejados.
+4. Cancelamento de Caronas: Usuários passageiros ou motoristas podem cancelar caronas ativas.
+5. Lista de caronas: Usuários motoristas e passageiros podem ver seu histórico de caronas.
 
 <br>
 
